@@ -1,6 +1,5 @@
 <div class="panel">
 
-<<<<<<< HEAD
   <div class="row merchant-list" ng-repeat="merchant in merchantList">
 	<div class="col-xs-3">
 		<div class="merchant-img" style="background-image:url(http://media-cdn.tripadvisor.com/media/photo-s/04/78/3c/91/kfc-kentucky-fried-chicken.jpg)">
@@ -20,28 +19,10 @@
 					<h4><span>{{merchant.queing_no}}</span></h4>
 					<label>in the queue</label>
 				</div>
-				<a href="#merchant/1" class="btn-success btn-sm btn">Queue Now</a>
+				<a href="#merchant/{{merchant.id}}" class="btn-success btn-sm btn">Queue Now</a>
 			</div>
 		</div>
 	</div>
-=======
-  <div class="row" ng-repeat="merchant in merchantList">
-    <div class="col-xs-3">
-      <img src="http://media-cdn.tripadvisor.com/media/photo-s/04/78/3c/91/kfc-kentucky-fried-chicken.jpg" style="width:100%;">
-    </div>
-    <div class="col-xs-9">
-      <h2>{{merchant.name}}</h2>
-      <p>
-        {{merchant.description}}
-        <br>
-        {{merchant.phone_number}}
-        <br>
-        {{merchant.email}}
-      </p>
-      <label class="label label-info">{{merchant.queing_no}}</label>
-      <a href="#merchant/{{merchant.id}}" class="btn-success btn-sm btn">Queue Now</a>
-    </div>
->>>>>>> 482774d49dfb726eb597f27112f5f54ea6901abb
 
   </div>
 </div>
