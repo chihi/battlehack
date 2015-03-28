@@ -8,28 +8,10 @@
  * Controller of the battlehackApp
  */
 angular.module('battlehackApp')
-  .controller('MainCtrl', function ($scope) {
+  .controller('MainCtrl', function ($scope, appService) {
     
 
-    $scope.merchantList = [
-		{
-			"id":1,
-			"name" : 'Swee Choon',
-			"description" : 'Dim sum place',
-			"phone_number": '12313123',
-			"email" : 'sasdas',
-			"queing_no":'asdasd'
-
-		},
-		{
-			"id":2,
-			"name" : 'KFC',
-			"description" : 'Fast food place',
-			"phone_number": '12313123',
-			"email" : 'sasdas',
-			"queing_no":'asdasd'
-		}
-
-    ];
+    $scope.merchantList = appService.getMerchant();
+   
 
   });
