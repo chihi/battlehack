@@ -11,6 +11,7 @@ angular.module('battlehackApp')
   .controller('MainCtrl', function ($scope, appService) {
     
 
+<<<<<<< HEAD
     $scope.merchantList = [
 		{
 			"id":1,
@@ -31,5 +32,9 @@ angular.module('battlehackApp')
 		}
 
     ];
+=======
+    $scope.merchantList = appService.getMerchant();
+   
+>>>>>>> 482774d49dfb726eb597f27112f5f54ea6901abb
 
   });
