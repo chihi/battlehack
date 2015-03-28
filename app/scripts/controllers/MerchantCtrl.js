@@ -18,6 +18,7 @@ angular.module('battlehackApp')
 
    $scope.selectIt = function(item)
    {
+      console.log(item);
    		$scope.selectedFood.push({'id':item.id, 'name':item.item_name, 'price':item.price});
    }
 

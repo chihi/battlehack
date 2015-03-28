@@ -1,6 +1,18 @@
 angular
   .module('battlehackApp').factory('appService', function($rootScope, $http){
 
+
+  	var url = "http://localhost:8000/";
+
+  	// if (isset($_SERVER['HTTP_ORIGIN'])) {
+   //      header("Access-Control-Allow-Origin: {$_SERVER['HTTP_ORIGIN']}");
+   //      header('Access-Control-Allow-Credentials: true');
+   //      header('Access-Control-Max-Age: 86400');    // cache for 1 day
+   //  }
+
+
+
+
   	var merchantList = [
 		{
 			"id":1,
@@ -58,6 +70,14 @@ angular
 
 	return {
 		getMerchant:function() {
+			// $http.jsonp(url+"merchants")
+			// 	.success (function(data){
+			// 		console.log(data);
+			// 	})
+			// 	.error(function (error){
+			// 		console.log(error);
+			// 	});
+
 			return merchantList;
 
 		},
@@ -66,6 +86,37 @@ angular
 			console.log(id);
 			var result = _.filter(merchantList, function(item){ return item.id == id; });
 			console.log(result);
+			return result;
+
+		},
+
+		register:function(){
+			var result;
+
+			var data = {
+				"detail": {
+					"merchant_id" : "1",
+					"phone_number" : "+65 9021 2121",
+					"email" : "customer4@gmail.com",
+					"number_of_persons" : 4
+				},
+				"items": [
+				 	{"item_id" : 1, "quantity" : 3 }, 
+				 	{"item_id" : 2, "quantity" : 5 }, 
+				 	{"item_id" : 3, "quantity" : 1 },
+				]
+			};
+
+			$http.post(url+"queues", data)
+				.success (function(result){
+					console.log(result);
+					var result = result;
+				})
+				.error (function(error){
+					console.log(error);
+				});
+
+			
 			return result;
 
 		},
