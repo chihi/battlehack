@@ -31,6 +31,14 @@ angular
         templateUrl: 'views/merchant.html',
         controller: 'MerchantCtrl'
       })
+      .when('/register', {
+        templateUrl: 'views/register.html',
+        controller: 'RegisterCtrl'
+      })
+      .when('/summary', {
+        templateUrl: 'views/summary.html',
+        controller: 'SummaryCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

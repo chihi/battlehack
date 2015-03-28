@@ -1,21 +1,76 @@
-<div class="panel">
+<div class="panel" ng-init="showTab = 'cat1'" >
 
   <div class="row" >
     <div class="col-xs-3">
       <img src="http://media-cdn.tripadvisor.com/media/photo-s/04/78/3c/91/kfc-kentucky-fried-chicken.jpg" style="width:100%;">
     </div>
     <div class="col-xs-9">
-      <h2>{{merchantId}}</h2>
+      <h2>{{merchantInfo.id}}</h2>
       <p>
-        {{merchant.description}}
+        {{merchantInfo.description}}
         <br>
-        {{merchant.phone_number}}
+        {{merchantInfo.phone_number}}
         <br>
-        {{merchant.email}}
+        {{merchantInfo.email}}
       </p>
       <label class="label label-info">{{merchant.queing_no}}</label>
       <a href="#merchant/1" class="btn-success btn-sm btn">Queue Now</a>
     </div>
+  </div>
 
+  <div class="row" >
+    <div class="col-sm-12" >
+      <ul class="nav nav-pills">
+        <li role="presentation" ng-class="{active:showTab == 'cat1'}"><a href=""  ng-click="showTab = 'cat1'">Cat 1</a></li>
+        <li role="presentation" ng-class="{active:showTab == 'cat2'}"><a href="" ng-click="showTab = 'cat2'">Cat 2</a></li> 
+        <li role="presentation" ng-class="{active:showTab == 'cat3'}"><a href="" ng-click="showTab = 'cat3'">Cat 3</a></li>
+        <li role="presentation" ng-class="{active:showTab == 'selected'}"><a href="" ng-click="showTab = 'selected'">Selected</a></li>
+      </ul>
+      <div class="row" ng-show="showTab == 'cat1'" ng-repeat="item in merchantInfo.food_items">
+          <div class="col-xs-3">
+            <img src="http://static.dezeen.com/uploads/2013/03/dezeen_3D-printed-food-by-Janne-Kytannen_5.jpg" style="width:100%;">
+          </div>
+          <div class="col-xs-9" style="padding:10px;">
+            <p>{{item.item_name}}</p>
+            <p>{{item.price}}</p>
+             <button class="btn btn-sm btn-success" ng-click="selectIt(item)">Add to cart</button>
+          </div>
+      </div>
+      <div class="row" ng-show="showTab == 'cat2'" ng-repeat="item in merchantInfo.food_items">
+          <div class="col-xs-3">
+            <img src="http://static.dezeen.com/uploads/2013/03/dezeen_3D-printed-food-by-Janne-Kytannen_5.jpg" style="width:100%;">
+          </div>
+          <div class="col-xs-9" style="padding:10px;">
+            <p>{{item.item_name}}</p>
+            <p>{{item.price}}</p>
+             <button class="btn btn-sm btn-success" ng-click="selectIt(item)">Add to cart</button>
+          </div>
+      </div>
+      <div class="row" ng-show="showTab == 'cat3'" ng-repeat="item in merchantInfo.food_items">
+          <div class="col-xs-3">
+            <img src="http://static.dezeen.com/uploads/2013/03/dezeen_3D-printed-food-by-Janne-Kytannen_5.jpg" style="width:100%;">
+          </div>
+          <div class="col-xs-9" style="padding:10px;">
+            <p>{{item.item_name}}</p>
+            <p>{{item.price}}</p>
+            <button class="btn btn-sm btn-success" ng-click="selectIt(item)">Add to cart</button>
+          </div>
+      </div>
+      <div class="row" ng-show="showTab == 'selected'" >
+          <div class="row" ng-repeat="item in selectedFood">
+            <div class="col-xs-3">
+              <img src="http://static.dezeen.com/uploads/2013/03/dezeen_3D-printed-food-by-Janne-Kytannen_5.jpg" style="width:100%;">
+            </div>
+            <div class="col-xs-9" style="padding:10px;">
+              <p>{{item.name}}</p>
+              <p>{{item.price}}</p>
+              <button class="btn btn-sm btn-danger" ng-click="removeIt({{$index+1}})">Remove</button>
+            </div>
+          </div>
+          <div class="row" align="center">
+              <button class="btn btn-lg btn-info" ng-click="confirm()">Confirm</button>
+          </div>
+      </div>
+    </div>
   </div>
 </div>

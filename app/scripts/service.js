@@ -1,24 +1,74 @@
-battlehackApp.factory('appService', function($rootScope, $http, $modal,$upload){
+angular
+  .module('battlehackApp').factory('appService', function($rootScope, $http){
 
-	
+  	var merchantList = [
+		{
+			"id":1,
+			"name" : 'Swee Choon',
+			"description" : 'Dim sum place',
+			"phone_number": '12313123',
+			"email" : 'sasdas',
+			"queing_no":'asdasd',
+			"food_items":[
+				{
+					"item_id":"11",
+					"item_name":"chicken",
+					"price":"$12.99"
+				},
+				{
+					"item_id":"12",
+					"item_name":"fish",
+					"price":"$5.99"
+				},
+				{
+					"item_id":"13",
+					"item_name":"vege",
+					"price":"$1.99"
+				}
+			]
+
+		},
+		{
+			"id":2,
+			"name" : 'KFC',
+			"description" : 'Fast food place',
+			"phone_number": '12313123',
+			"email" : 'sasdas',
+			"queing_no":'asdasd',
+			"food_items":[
+				{
+					"item_id":"14",
+					"item_name":"pork",
+					"price":"$12.99"
+				},
+				{
+					"item_id":"15",
+					"item_name":"beef",
+					"price":"$5.99"
+				},
+				{
+					"item_id":"16",
+					"item_name":"lamb",
+					"price":"$1.99"
+				}
+			]
+		}
+
+    ];
 
 	return {
-		getMerchant:function(missionId) {
-			var data = {
-			 		mission_id: missionId,
-			 		title: shareTitle
-           	};
-
-           	return $http({
-				method: "POST",
-				url: $rootScope.appUrl+"/api/mission/share",
-				transformRequest: transformRequestAsFormPost,
-				data: data,
-				headers: {'Content-Type': 'application/x-www-form-urlencoded'}
-			}); 
+		getMerchant:function() {
+			return merchantList;
 
 		},
 
+		getMerchantById:function(id) {
+			console.log(id);
+			var result = _.filter(merchantList, function(item){ return item.id == id; });
+			console.log(result);
+			return result;
+
+		},
 
 		saveMission: function(data,file) {
 
