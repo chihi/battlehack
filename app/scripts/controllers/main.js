@@ -13,6 +13,7 @@ angular.module('battlehackApp')
 
     $scope.merchantList = [
 		{
+			"id":1,
 			"name" : 'Swee Choon',
 			"description" : 'Dim sum place',
 			"phone_number": '12313123',
@@ -21,6 +22,7 @@ angular.module('battlehackApp')
 
 		},
 		{
+			"id":2,
 			"name" : 'KFC',
 			"description" : 'Fast food place',
 			"phone_number": '12313123',
