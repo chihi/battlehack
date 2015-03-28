@@ -84,6 +84,8 @@ body {
   display: block;
   text-align: center;
   padding-top: 30px;
+  font-size: 20px;
+  font-weight: 800;
 }
 .merchant-queue label {
   font-size: 10px;
@@ -110,7 +112,17 @@ body {
 .push-right {
   margin-right: 10px; 
 }
-
+.sidebar h4 {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+.divider {
+    height: 1px;
+  margin: 9px 0;
+  overflow: hidden;
+  background-color: #e5e5e5;
+}
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {
