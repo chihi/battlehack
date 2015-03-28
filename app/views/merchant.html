@@ -1,5 +1,5 @@
 <div class="panel" ng-init="showTab = 'cat1'" >
-
+  
   <div class="row" >
     <div class="col-xs-3">
       <img src="http://media-cdn.tripadvisor.com/media/photo-s/04/78/3c/91/kfc-kentucky-fried-chicken.jpg" style="width:100%;">
@@ -24,7 +24,6 @@
         <li role="presentation" ng-class="{active:showTab == 'cat1'}"><a href=""  ng-click="showTab = 'cat1'">Cat 1</a></li>
         <li role="presentation" ng-class="{active:showTab == 'cat2'}"><a href="" ng-click="showTab = 'cat2'">Cat 2</a></li> 
         <li role="presentation" ng-class="{active:showTab == 'cat3'}"><a href="" ng-click="showTab = 'cat3'">Cat 3</a></li>
-        <li role="presentation" ng-class="{active:showTab == 'selected'}"><a href="" ng-click="showTab = 'selected'">Selected</a></li>
       </ul>
       <div class="col-xs-6">
         <div class="row" ng-show="showTab == 'cat1'" ng-repeat="item in merchantInfo.food_items">
