@@ -26,51 +26,78 @@
         <li role="presentation" ng-class="{active:showTab == 'cat3'}"><a href="" ng-click="showTab = 'cat3'">Cat 3</a></li>
         <li role="presentation" ng-class="{active:showTab == 'selected'}"><a href="" ng-click="showTab = 'selected'">Selected</a></li>
       </ul>
-      <div class="row" ng-show="showTab == 'cat1'" ng-repeat="item in merchantInfo.food_items">
-          <div class="col-xs-3">
-            <img src="http://static.dezeen.com/uploads/2013/03/dezeen_3D-printed-food-by-Janne-Kytannen_5.jpg" style="width:100%;">
-          </div>
-          <div class="col-xs-9" style="padding:10px;">
-            <p>{{item.item_name}}</p>
-            <p>{{item.price}}</p>
-             <button class="btn btn-sm btn-success" ng-click="selectIt(item)">Add to cart</button>
-          </div>
-      </div>
-      <div class="row" ng-show="showTab == 'cat2'" ng-repeat="item in merchantInfo.food_items">
-          <div class="col-xs-3">
-            <img src="http://static.dezeen.com/uploads/2013/03/dezeen_3D-printed-food-by-Janne-Kytannen_5.jpg" style="width:100%;">
-          </div>
-          <div class="col-xs-9" style="padding:10px;">
-            <p>{{item.item_name}}</p>
-            <p>{{item.price}}</p>
-             <button class="btn btn-sm btn-success" ng-click="selectIt(item)">Add to cart</button>
-          </div>
-      </div>
-      <div class="row" ng-show="showTab == 'cat3'" ng-repeat="item in merchantInfo.food_items">
-          <div class="col-xs-3">
-            <img src="http://static.dezeen.com/uploads/2013/03/dezeen_3D-printed-food-by-Janne-Kytannen_5.jpg" style="width:100%;">
-          </div>
-          <div class="col-xs-9" style="padding:10px;">
-            <p>{{item.item_name}}</p>
-            <p>{{item.price}}</p>
-            <button class="btn btn-sm btn-success" ng-click="selectIt(item)">Add to cart</button>
-          </div>
-      </div>
-      <div class="row" ng-show="showTab == 'selected'" >
-          <div class="row" ng-repeat="item in selectedFood">
+      <div class="col-xs-6">
+        <div class="row" ng-show="showTab == 'cat1'" ng-repeat="item in merchantInfo.food_items">
             <div class="col-xs-3">
               <img src="http://static.dezeen.com/uploads/2013/03/dezeen_3D-printed-food-by-Janne-Kytannen_5.jpg" style="width:100%;">
             </div>
             <div class="col-xs-9" style="padding:10px;">
-              <p>{{item.name}}</p>
+              <p>{{item.item_name}}</p>
               <p>{{item.price}}</p>
-              <button class="btn btn-sm btn-danger" ng-click="removeIt({{$index+1}})">Remove</button>
+              <div class="row">
+                <div class="col-xs-5">
+                  <input type="number" ng-model="item.qty" class="col-sm-3 input-sm form-control" placeholder="Qty">
+                </div>
+                <div class="col-xs-7">
+                  <button class="btn btn-sm btn-success" ng-click="selectIt(item)">Add to cart</button>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="row" align="center">
-              <button class="btn btn-lg btn-info" ng-click="confirm()">Confirm</button>
-          </div>
+        </div>
+        <div class="row" ng-show="showTab == 'cat2'" ng-repeat="item in merchantInfo.food_items">
+            <div class="col-xs-3">
+              <img src="http://static.dezeen.com/uploads/2013/03/dezeen_3D-printed-food-by-Janne-Kytannen_5.jpg" style="width:100%;">
+            </div>
+            <div class="col-xs-9" style="padding:10px;">
+              <p>{{item.item_name}}</p>
+              <p>{{item.price}}</p>
+              <div class="row">
+                <div class="col-xs-5">
+                  <input type="number" ng-model="item.qty" class="col-sm-3 input-sm form-control" placeholder="Qty">
+                </div>
+                <div class="col-xs-7">
+                  <button class="btn btn-sm btn-success" ng-click="selectIt(item)">Add to cart</button>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="row" ng-show="showTab == 'cat3'" ng-repeat="item in merchantInfo.food_items">
+            <div class="col-xs-3">
+              <img src="http://static.dezeen.com/uploads/2013/03/dezeen_3D-printed-food-by-Janne-Kytannen_5.jpg" style="width:100%;">
+            </div>
+            <div class="col-xs-9" style="padding:10px;">
+              <p>{{item.item_name}}</p>
+              <p>{{item.price}}</p>
+              <div class="row">
+                <div class="col-xs-5">
+                  <input type="number" ng-model="item.qty" class="col-sm-3 input-sm form-control" placeholder="Qty">
+                </div>
+                <div class="col-xs-7">
+                  <button class="btn btn-sm btn-success" ng-click="selectIt(item)">Add to cart</button>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class="col-xs-6">
+        <div class="row"  >
+            <div class="row" ng-repeat="item in selectedFood">
+              <div class="col-xs-3">
+                <img src="http://static.dezeen.com/uploads/2013/03/dezeen_3D-printed-food-by-Janne-Kytannen_5.jpg" style="width:100%;">
+              </div>
+              <div class="col-xs-9" style="padding:10px;">
+                <p>{{item.name}}</p>
+                <p>{{item.price}}</p>
+                <!-- <input type="number" class="col-sm-3 form-control" placeholder="Qty"> -->
+                <button class="btn btn-sm btn-danger" ng-click="removeIt({{$index+1}})">Remove</button>
+              </div>
+            </div>
+          
+        </div>
       </div>
     </div>
+    <div class="row" align="center">
+          <button class="btn btn-lg btn-info" ng-click="confirm()">Confirm</button>
+      </div>
   </div>
 </div>
