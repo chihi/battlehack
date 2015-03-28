@@ -16,10 +16,40 @@ angular.module('battlehackApp')
 
    $scope.selectedFood = [];
 
-   $scope.selectIt = function(item)
+   var exist = false;
+
+   $scope.selectIt = function(index, item)
    {
-      console.log(item);
-   		$scope.selectedFood.push({'id':item.id, 'name':item.item_name, 'price':item.price});
+      console.log("index "+index);
+      
+      if ($scope.selectedFood.length > 0)
+      {
+        angular.forEach($scope.selectedFood, function(val,key){
+          
+          console.log("val id: "+val.id +", item id: "+item.item_id);
+
+          if (val.id == item.item_id)
+          {
+            exist = true;
+            $scope.selectedFood[key].qty += item.qty;
+          }
+          else
+          {
+            exist = false;
+          }
+
+        });
+      }
+
+
+      if (!exist)
+      {
+        $scope.selectedFood.push({'id':item.item_id, 'name':item.item_name, 'price':item.price, 'qty':item.qty});
+        // $scope.selectedFood[key].qty += item.qty;
+      }
+      // angular.forEach($scope.selectedFood, function(value, key) {
+      //   console.log("key: "+key);
+      // });
    }
 
    $scope.removeIt = function(index)

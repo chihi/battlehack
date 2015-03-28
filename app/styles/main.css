@@ -58,10 +58,12 @@ body {
 .marketing p + h4 {
   margin-top: 28px;
 }
-.merchant-list {
-  background-color: #F0F1F2;
+.row.list {
   margin-bottom: 5px;
   padding: 20px 10px;
+}
+.row.list.merchant-list {
+  background-color: #F0F1F2;
 }
 .merchant-queue-wrapper {
   width: 90px;
