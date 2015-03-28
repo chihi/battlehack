@@ -58,6 +58,58 @@ body {
 .marketing p + h4 {
   margin-top: 28px;
 }
+.merchant-list {
+  background-color: #F0F1F2;
+  margin-bottom: 5px;
+  padding: 20px 10px;
+}
+.merchant-queue-wrapper {
+  width: 90px;
+  float: right;
+}
+.merchant-queue {
+  margin-bottom: 22px;
+}
+.merchant-queue h4 {
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  background-color: #ccc;
+  margin-bottom: 5px;
+  display: block;
+  margin: 0 auto;
+}
+.merchant-queue h4 span {
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  padding-top: 30px;
+}
+.merchant-queue label {
+  font-size: 10px;
+  font-weight: 400;
+  display: block;
+  text-align: center;
+}
+.merchant-name {
+  margin-top: 5px;
+}
+.merchant-img {
+  max-width: 100%;
+  height: 145px;
+  background: #A69785;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.29);
+  position: relative;
+  background-size: cover;
+  background-position: top center;
+}
+.merchant-desc {
+  line-height: 16px;
+  margin-bottom: 15px;
+}
+.push-right {
+  margin-right: 10px; 
+}
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
