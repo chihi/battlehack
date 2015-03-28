@@ -1,0 +1,28 @@
+<div class="panel">
+  <div class="row" ng-repeat="merchant in merchantList">
+    <div class="col-xs-3">
+      <img src="http://media-cdn.tripadvisor.com/media/photo-s/04/78/3c/91/kfc-kentucky-fried-chicken.jpg" style="width:100%;">
+    </div>
+    <div class="col-xs-9">
+      <h2>{{merchant.name}}</h2>
+      <p>
+        {{merchant.description}}
+      </p>
+     
+      <label class="label label-info">{{queing_no}}</label>
+    </div>
+   <!--  <ul class="media-list">
+      <li class="media" ng-repeat="merchant in merchantList">
+        <div class="media-left">
+          <a href="#">
+            <img class="media-object" src="..." alt="...">
+          </a>
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading">{{merchant.name}}</h4>
+          ...
+        </div>
+      </li>
+    </ul> -->
+  </div>
+</div>
